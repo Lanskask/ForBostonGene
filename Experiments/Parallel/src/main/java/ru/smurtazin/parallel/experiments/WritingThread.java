@@ -13,20 +13,22 @@ public class WritingThread implements Runnable {
 
     Scanner in = new Scanner(System.in);
 
-    public WritingThread() {}
+    public WritingThread(ArrayList<Integer> numsInInt) {
+        this.numsInInt = numsInInt;
+    }
 
-    public WritingThread(ArrayList<String> numsInString) {
-        this.numsInString = numsInString;
-        System.out.println(System.identityHashCode(numsInString));
-        System.out.println(System.identityHashCode(this.numsInString));
+    public ArrayList<Integer> getNumsInInt() {
+        return numsInInt;
     }
 
     public String takeNum() {
         System.out.println("Write your number: ");
         String nextNum = this.in.nextLine();
 
-//        this.numsInString.add(nextNum);
-        this.numsInInt.add(this.wordToNum(nextNum));
+//        this.numsInString.add(nextNum); // need to use stringNum array
+//        synchronized (this.numsInInt) {
+            this.numsInInt.add(this.wordToNum(nextNum));
+//        }
         return nextNum;
     }
 
@@ -128,10 +130,9 @@ public class WritingThread implements Runnable {
     }
 
     public void run() {
-        System.out.println("-- WritingThread Log 1");
         String answer = "";
+
         while ( !answer.equalsIgnoreCase("q")) {
-            System.out.println("-- WritingThread Log 2");
             System.out.println("Print q to exit");
             answer = this.takeNum();
 
@@ -151,8 +152,6 @@ public class WritingThread implements Runnable {
                 Thread.currentThread().interrupt();
             }
         }*/
-
-        System.out.println("-- WritingThread Log 3");
     }
 
 }

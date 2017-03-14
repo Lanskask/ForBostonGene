@@ -4,6 +4,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
@@ -13,7 +15,8 @@ import static org.junit.Assert.*;
  */
 public class WritingThreadTest {
 
-    WritingThread writingThread = new WritingThread();
+    ArrayList<Integer> arrayList = new ArrayList<Integer>(Arrays.asList(5, 3, 8, 1)); // need for takeNum test
+    WritingThread writingThread = new WritingThread(arrayList);
 
     void printAllIntArray() {
         for (int item : this.writingThread.numsInInt ) {
@@ -33,15 +36,9 @@ public class WritingThreadTest {
     @Test
     public void takeNum() throws Exception {
         ByteArrayInputStream in = new ByteArrayInputStream("one".getBytes());
-//        System.setIn(new ByteArrayInputStream("one".getBytes()));
         this.writingThread.takeNum();
         System.setIn(in);
 
-        /*System.setIn(new ByteArrayInputStream("two".getBytes()));
-        this.writingThread.takeNum();
-
-        System.setIn(new ByteArrayInputStream("three".getBytes()));
-        this.writingThread.takeNum();*/
 
         this.printAllStringArray();
         this.printAllIntArray();
