@@ -1,4 +1,4 @@
-package ru.smurtazin.parallel.experiments;
+package ru.smurtazin.parallel.experiments.fromArsent;
 
 /**
  * Created by a1 on 15.03.17.

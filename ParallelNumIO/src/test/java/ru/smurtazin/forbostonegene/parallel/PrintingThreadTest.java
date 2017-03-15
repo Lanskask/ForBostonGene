@@ -1,6 +1,7 @@
-package ru.smurtazin.parallel.experiments;
+package ru.smurtazin.forbostonegene.parallel;
 
 import org.junit.Test;
+import ru.smurtazin.forbostonegene.parallel.PrintingThread;
 
 import java.util.ArrayList;
 import java.util.Arrays;

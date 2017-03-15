@@ -1,52 +1,35 @@
-package ru.smurtazin.forbostongene.parallelnumio;
+package ru.smurtazin.forbostonegene.parallel;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Created by a1 on 15.03.17.
+ * Created by a1 on 14.03.17.
  */
-public class MultythrArray {
+public class WritingThread implements Runnable {
 
-    ArrayList<Integer> numsArray = new ArrayList<Integer>();
+    ArrayList<String> numsInString = new ArrayList<String>();
+    ArrayList<Integer> numsInInt = new ArrayList<Integer>();
+
     Scanner in = new Scanner(System.in);
 
-    public void push(int t) {
-        synchronized (this.numsArray) {
-            this.numsArray.add(t);
-            this.numsArray.notifyAll();
-        }
+    public WritingThread(ArrayList<Integer> numsInInt) {
+        this.numsInInt = numsInInt;
     }
 
-    public void push() {
-        synchronized (this.numsArray) {
-            this.numsArray.add(this.takeNum());
-//            this.takeNum();
-            this.numsArray.notifyAll();
-        }
+    public ArrayList<Integer> getNumsInInt() {
+        return numsInInt;
     }
 
-    public int poll() {
-        synchronized (this.numsArray) {
-            while(this.numsArray.isEmpty()) {
-                try {
-                    this.numsArray.wait(5000);
-                } catch (InterruptedException ie) {
-                    ie.printStackTrace();
-                }
-            }
-        }
-        return this.numsArray.remove(this.numsArray.indexOf(this.getMinInArray()));
-    }
-
-    public int takeNum() {
+    public String takeNum() {
         System.out.println("Write your number: ");
         String nextNum = this.in.nextLine();
-        int intNum = this.wordToNum(nextNum);
 
-//        this.numsArray.add();
-
-        return intNum;
+//        this.numsInString.add(nextNum); // need to use stringNum array
+//        synchronized (this.numsArray) {
+            this.numsInInt.add(this.wordToNum(nextNum));
+//        }
+        return nextNum;
     }
 
     /**
@@ -146,13 +129,20 @@ public class MultythrArray {
         return num;
     }
 
-    int getMinInArray() {
-        int min = this.numsArray.get(0);
-        for (int item :
-                this.numsArray) {
-            if (item < min) min = item;
+    public void run() {
+        String answer = "";
+
+        while ( !answer.equalsIgnoreCase("q")) {
+            System.out.println("Print q to exit");
+            answer = this.takeNum();
+
+            try {
+                Thread.sleep(1000); // is it needed or not
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
         }
-        return min;
+
     }
 
 }

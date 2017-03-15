@@ -1,4 +1,4 @@
-package ru.smurtazin.parallel.experiments;
+package ru.smurtazin.forbostonegene.parallel;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by a1 on 14.03.17.

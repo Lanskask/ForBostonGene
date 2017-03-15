@@ -1,11 +1,11 @@
-package ru.smurtazin.forbostongene.parallelnumio;
+package ru.smurtazin.parallel.experiments.MultyThreadArray;
 
 import java.util.Scanner;
 
 /**
  * Created by a1 on 15.03.17.
  */
-public class Main {
+public class MyltthrArrMain {
 
     MultythrArray multythrArray = new MultythrArray();
 
@@ -21,7 +21,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main main = new Main();
+        MyltthrArrMain main = new MyltthrArrMain();
 
         main.runApp();
     }

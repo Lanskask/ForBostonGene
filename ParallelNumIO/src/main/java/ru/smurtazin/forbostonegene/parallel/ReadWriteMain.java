@@ -1,18 +1,11 @@
-package ru.smurtazin.parallel.experiments;
-
-import ru.smurtazin.parallel.experiments.Mail.GetTheEMail;
-import ru.smurtazin.parallel.experiments.Mail.GetTime20;
+package ru.smurtazin.forbostonegene.parallel;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-
-import static java.lang.System.in;
 
 /**
  * Created by a1 on 14.03.17.
  */
-public class Main {
+public class ReadWriteMain {
 
     ArrayList<Integer> numsInInt = new ArrayList<Integer>();
 
@@ -31,7 +24,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main main = new Main();
+        ReadWriteMain main = new ReadWriteMain();
 
         try {
             main.runApp();

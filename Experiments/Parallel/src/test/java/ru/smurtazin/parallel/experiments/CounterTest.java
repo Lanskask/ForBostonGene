@@ -1,6 +1,7 @@
 package ru.smurtazin.parallel.experiments;
 
 import org.junit.Test;
+import ru.smurtazin.parallel.experiments.fromArsent.Counter;
 
 import java.util.Arrays;
 import java.util.List;

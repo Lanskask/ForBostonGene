@@ -1,4 +1,4 @@
-package ru.smurtazin.parallel.experiments;
+package ru.smurtazin.parallel.experiments.fromArsent;
 
 import java.text.DecimalFormat;
 
