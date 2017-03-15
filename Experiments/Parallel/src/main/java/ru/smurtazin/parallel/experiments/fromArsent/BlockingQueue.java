@@ -11,7 +11,7 @@ public class BlockingQueue<T> {
     public void push(T t) {
         synchronized (this.queue) {
             this.queue.add(t);
-            this.queue.notify();
+            this.queue.notifyAll();
         }
     }
 

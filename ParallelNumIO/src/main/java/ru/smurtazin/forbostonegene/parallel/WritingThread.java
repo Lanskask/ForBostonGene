@@ -130,19 +130,21 @@ public class WritingThread implements Runnable {
     }
 
     public void run() {
-        String answer = "";
+        synchronized (this.numsInInt) {
+            String answer = "";
 
-        while ( !answer.equalsIgnoreCase("q")) {
-            System.out.println("Print q to exit");
-            answer = this.takeNum();
+            while (!answer.equalsIgnoreCase("q")) {
+                System.out.println("Print q to exit");
+                answer = this.takeNum();
 
-            try {
-                Thread.sleep(1000); // is it needed or not
-            } catch (InterruptedException ie) {
-                Thread.currentThread().interrupt();
+                try {
+//                Thread.sleep(1000); // is it needed or not
+                    this.numsInInt.wait();
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                }
             }
         }
-
     }
 
 }

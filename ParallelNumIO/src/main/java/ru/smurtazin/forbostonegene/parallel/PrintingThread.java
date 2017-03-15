@@ -35,9 +35,11 @@ public class PrintingThread implements Runnable {
 
                 if (this.numsArray.isEmpty()) {
                     System.out.println("Array is empty.");
+                    this.numsArray.notifyAll();
                 } else {
                     System.out.println("Min num in array: " + this.getMinInArray());
                     this.numsArray.remove(this.numsArray.indexOf(this.getMinInArray()));
+                    this.numsArray.notifyAll();
                 }
 //            }
         }
