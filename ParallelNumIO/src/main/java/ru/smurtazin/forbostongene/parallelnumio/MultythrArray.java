@@ -1,35 +1,52 @@
-package ru.smurtazin.parallel.experiments;
+package ru.smurtazin.forbostongene.parallelnumio;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Created by a1 on 14.03.17.
+ * Created by a1 on 15.03.17.
  */
-public class WritingThread implements Runnable {
+public class MultythrArray {
 
-    ArrayList<String> numsInString = new ArrayList<String>();
-    ArrayList<Integer> numsInInt = new ArrayList<Integer>();
-
+    ArrayList<Integer> numsArray = new ArrayList<Integer>();
     Scanner in = new Scanner(System.in);
 
-    public WritingThread(ArrayList<Integer> numsInInt) {
-        this.numsInInt = numsInInt;
+    public void push(int t) {
+        synchronized (this.numsArray) {
+            this.numsArray.add(t);
+            this.numsArray.notifyAll();
+        }
     }
 
-    public ArrayList<Integer> getNumsInInt() {
-        return numsInInt;
+    public void push() {
+        synchronized (this.numsArray) {
+            this.numsArray.add(this.takeNum());
+//            this.takeNum();
+            this.numsArray.notifyAll();
+        }
     }
 
-    public String takeNum() {
+    public int poll() {
+        synchronized (this.numsArray) {
+            while(this.numsArray.isEmpty()) {
+                try {
+                    this.numsArray.wait(5000);
+                } catch (InterruptedException ie) {
+                    ie.printStackTrace();
+                }
+            }
+        }
+        return this.numsArray.remove(this.numsArray.indexOf(this.getMinInArray()));
+    }
+
+    public int takeNum() {
         System.out.println("Write your number: ");
         String nextNum = this.in.nextLine();
+        int intNum = this.wordToNum(nextNum);
 
-//        this.numsInString.add(nextNum); // need to use stringNum array
-//        synchronized (this.numsArray) {
-            this.numsInInt.add(this.wordToNum(nextNum));
-//        }
-        return nextNum;
+//        this.numsArray.add();
+
+        return intNum;
     }
 
     /**
@@ -129,20 +146,13 @@ public class WritingThread implements Runnable {
         return num;
     }
 
-    public void run() {
-        String answer = "";
-
-        while ( !answer.equalsIgnoreCase("q")) {
-            System.out.println("Print q to exit");
-            answer = this.takeNum();
-
-            try {
-                Thread.sleep(1000); // is it needed or not
-            } catch (InterruptedException ie) {
-                Thread.currentThread().interrupt();
-            }
+    int getMinInArray() {
+        int min = this.numsArray.get(0);
+        for (int item :
+                this.numsArray) {
+            if (item < min) min = item;
         }
-
+        return min;
     }
 
 }
