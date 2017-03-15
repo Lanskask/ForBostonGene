@@ -26,9 +26,9 @@ public class WritingThread implements Runnable {
         String nextNum = this.in.nextLine();
 
 //        this.numsInString.add(nextNum); // need to use stringNum array
-//        synchronized (this.numsArray) {
+        synchronized (this.numsInInt) {
             this.numsInInt.add(this.wordToNum(nextNum));
-//        }
+        }
         return nextNum;
     }
 
@@ -129,17 +129,40 @@ public class WritingThread implements Runnable {
         return num;
     }
 
-    public void run() {
+    public void run2() {
         synchronized (this.numsInInt) {
             String answer = "";
 
             while (!answer.equalsIgnoreCase("q")) {
-                System.out.println("Print q to exit");
+                System.out.print("Print q to exit. ");
                 answer = this.takeNum();
 
                 try {
 //                Thread.sleep(1000); // is it needed or not
                     this.numsInInt.wait();
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+        }
+    }
+
+    public void run() {
+        synchronized (this.numsInInt) {
+            String nextNum = "";
+
+            while (!nextNum.equalsIgnoreCase("q")) {
+                System.out.print("Print q to exit. ");
+                System.out.println("Write your number: ");
+                nextNum = this.in.nextLine();
+
+                synchronized (this.numsInInt) {
+                    this.numsInInt.add(this.wordToNum(nextNum));
+                }
+
+                try {
+                    Thread.sleep(1000); // is it needed or not ?
+//                    this.numsInInt.wait();
                 } catch (InterruptedException ie) {
                     Thread.currentThread().interrupt();
                 }

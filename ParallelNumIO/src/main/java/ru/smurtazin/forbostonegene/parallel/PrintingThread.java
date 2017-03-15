@@ -25,23 +25,22 @@ public class PrintingThread implements Runnable {
     }
 
     public void run() {
-        synchronized (this.numsArray) {
 //            while (this.numsArray.isEmpty()) {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException ie) {
-                    Thread.currentThread().interrupt();
-                }
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
 
+            synchronized (this.numsArray) {
                 if (this.numsArray.isEmpty()) {
                     System.out.println("Array is empty.");
-                    this.numsArray.notifyAll();
                 } else {
                     System.out.println("Min num in array: " + this.getMinInArray());
                     this.numsArray.remove(this.numsArray.indexOf(this.getMinInArray()));
-                    this.numsArray.notifyAll();
                 }
+                this.numsArray.notifyAll();
 //            }
-        }
+            }
     }
 }
