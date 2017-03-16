@@ -8,11 +8,20 @@ import java.util.ArrayList;
 public class PrintingThread implements Runnable {
 
     ArrayList<Integer> numsArray = new ArrayList<Integer>();
+    Runnable writingThread; // = new WritingThread(numsArray);
+    Thread writeTread; // = new Thread(writingThread);
 
     public PrintingThread() {}
 
+    // used in test
     public PrintingThread(ArrayList<Integer> numsArray) {
         this.numsArray = numsArray;
+    }
+
+    public PrintingThread(ArrayList<Integer> numsArray, Runnable writingThread) {
+        this.numsArray = numsArray;
+        this.writingThread = writingThread;
+        this.writeTread = new Thread(writingThread);
     }
 
     int getMinInArray() {
@@ -25,8 +34,7 @@ public class PrintingThread implements Runnable {
     }
 
     public void run() {
-//            while (this.numsArray.isEmpty()) {
-        while (true) {
+        while (this.writeTread.isAlive()) {
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException ie) {

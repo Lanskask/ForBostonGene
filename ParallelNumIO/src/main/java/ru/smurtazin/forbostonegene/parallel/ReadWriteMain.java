@@ -10,14 +10,14 @@ public class ReadWriteMain {
     ArrayList<Integer> numsInInt = new ArrayList<Integer>();
 
     Runnable writingThread = new WritingThread(numsInInt);
-    Runnable printingThread = new PrintingThread(numsInInt);
+    Runnable printingThread = new PrintingThread(numsInInt, writingThread);
 
     void runApp() throws InterruptedException {
         Thread wrtThread = new Thread(this.writingThread, "WritingThread");
         Thread prThr = new Thread(this.printingThread, "PrintingThread");
 
-        wrtThread.start();
         prThr.start();
+        wrtThread.start();
 
         wrtThread.join();
         prThr.join();
@@ -31,7 +31,6 @@ public class ReadWriteMain {
         } catch (InterruptedException ie) {
             System.out.println(ie.toString());
         }
-
     }
 
 }
