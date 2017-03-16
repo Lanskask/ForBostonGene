@@ -35,7 +35,8 @@
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <!--<mainClass>ru.smurtazin.forbostonegene.twiitter4j.GetUserStatus</mainClass>-->
-                                    <mainClass>ru.smurtazin.forbostonegene.twiitter4j.UpdateStatus</mainClass>
+                                    <!--<mainClass>ru.smurtazin.forbostonegene.twiitter4j.UpdateStatus</mainClass>-->
+                                    <mainClass>ru.smurtazin.forbostonegene.twiitter4j.SendDirectMessage</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

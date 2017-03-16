@@ -21,7 +21,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>ru.smurtazin.forbostonegene.twiitter4j.UpdateStatus</mainClass>
+                  <mainClass>ru.smurtazin.forbostonegene.twiitter4j.SendDirectMessage</mainClass>
                 </transformer>
               </transformers>
             </configuration>
