@@ -26,6 +26,7 @@ public class PrintingThread implements Runnable {
 
     public void run() {
 //            while (this.numsArray.isEmpty()) {
+        while (true) {
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException ie) {
@@ -40,7 +41,7 @@ public class PrintingThread implements Runnable {
                     this.numsArray.remove(this.numsArray.indexOf(this.getMinInArray()));
                 }
                 this.numsArray.notifyAll();
-//            }
             }
+        }
     }
 }

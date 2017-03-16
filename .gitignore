@@ -1,5 +1,11 @@
-*.xml
+!*.xml
 *.iml
 .idea
-!Experiments
 **/target
+
+!Experiments
+Experiments/Parallel/coreJava
+
+SpringMongoDB/gs-accessing-mongodb-data-rest/
+SpringMongoDB/spring-security-password-hashing/
+SpringMongoDB/spring-security-password-hashing-annotation/
