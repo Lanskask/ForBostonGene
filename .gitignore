@@ -9,3 +9,7 @@ Experiments/Parallel/coreJava
 SpringMongoDB/gs-accessing-mongodb-data-rest/
 SpringMongoDB/spring-security-password-hashing/
 SpringMongoDB/spring-security-password-hashing-annotation/
+
+TwitterApiSender/gs-accessing-twitter/
+TwitterApiSender/gs-accessing-twitter-mein/
+TwitterApiSender/src

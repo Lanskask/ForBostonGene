@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>TwitterApiSender</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>WithTwitter4j</module>
+    </modules>
 
     <dependencies>
         <dependency>
