@@ -13,7 +13,6 @@
         <module>SpringMongoDB</module>
         <module>TwitterApiSender</module>
         <module>Experiments</module>
-        <module>SpringSecureMongoRest</module>
     </modules>
 
     <dependencies>
