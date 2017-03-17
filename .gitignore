@@ -2,18 +2,12 @@
 *.iml
 .idea
 **/target/
+**/DOCS/
+**/test/
 
 !Experiments
-Experiments/Parallel/coreJava
-
-SpringMongoDB/gs-accessing-mongodb-data-rest/
-SpringMongoDB/spring-security-password-hashing/
-SpringMongoDB/spring-security-password-hashing-annotation/
-SpringMongoDB/gs-securing-web/
+Experiments/Spring/SpringMongoBCrypt/git1
 
 TwitterApiSender/gs-accessing-twitter/
 TwitterApiSender/gs-accessing-twitter-mein/
 TwitterApiSender/src/
-
-SpringSecureMongoRest/gs-accessing-mongodb-data-rest/
-SpringSecureMongoRest/gs-securing-web/
