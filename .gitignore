@@ -7,6 +7,11 @@
 
 !Experiments
 Experiments/Spring/SpringMongoBCrypt/git1
+Experiments/Spring/BCryptPass
+Experiments/Spring/SpringAndSecure
+Experiments/Spring/spring-security-password-hashing-annotation
+Experiments/Spring/gs-securing-web
+Experiments/Spring/gs-accessing-mongodb-data-rest-1
 
 TwitterApiSender/gs-accessing-twitter/
 TwitterApiSender/gs-accessing-twitter-mein/
