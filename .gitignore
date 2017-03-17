@@ -1,7 +1,7 @@
 !*.xml
 *.iml
 .idea
-**/target
+**/target/
 
 !Experiments
 Experiments/Parallel/coreJava
@@ -9,7 +9,11 @@ Experiments/Parallel/coreJava
 SpringMongoDB/gs-accessing-mongodb-data-rest/
 SpringMongoDB/spring-security-password-hashing/
 SpringMongoDB/spring-security-password-hashing-annotation/
+SpringMongoDB/gs-securing-web/
 
 TwitterApiSender/gs-accessing-twitter/
 TwitterApiSender/gs-accessing-twitter-mein/
 TwitterApiSender/src/
+
+SpringSecureMongoRest/gs-accessing-mongodb-data-rest/
+SpringSecureMongoRest/gs-securing-web/
