@@ -30,10 +30,6 @@ public class PrintingThread implements Runnable {
         }
     }
 
-    void printFunction() {
-        System.out.println("Printing Thread");
-    }
-
     int getMinInArray() {
         int min = this.numsArray.get(0);
         for (int item :
