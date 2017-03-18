@@ -19,7 +19,7 @@ public class ReadingThread implements Runnable {
     public void run() {
         while (true) {
             try {
-                Thread.sleep(0); // how to do it with out sleep
+                Thread.sleep(0); // TODO do it with out sleep
             } catch (InterruptedException ie) {
                 ie.printStackTrace();
             }
@@ -35,13 +35,9 @@ public class ReadingThread implements Runnable {
         System.out.println("Write your number: ");
         String nextNum = this.in.nextLine();
 
-        this.numsInInt.add(this.wordToNum(nextNum));
+        this.numsInInt.add(this.inNumerals(nextNum));
 
         return nextNum;
-    }
-
-    void printFunction() {
-        System.out.println("Reading Thread");
     }
 
     /**
