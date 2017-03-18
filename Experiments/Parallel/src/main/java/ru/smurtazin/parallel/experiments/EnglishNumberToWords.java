@@ -1,4 +1,4 @@
-package ru.smurtazin.forbostonegene.parallel;
+package ru.smurtazin.parallel.experiments;
 
 import java.text.DecimalFormat;
 

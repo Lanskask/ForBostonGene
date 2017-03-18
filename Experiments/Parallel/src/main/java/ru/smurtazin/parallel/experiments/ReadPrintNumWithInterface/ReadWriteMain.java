@@ -1,4 +1,4 @@
-package ru.smurtazin.forbostonegene.parallel;
+package ru.smurtazin.parallel.experiments.ReadPrintNumWithInterface;
 
 import java.util.ArrayList;
 
@@ -29,7 +29,7 @@ public class ReadWriteMain {
         try {
             main.runApp();
         } catch (InterruptedException ie) {
-            System.out.println(ie.toString());
+            ie.printStackTrace();
         }
     }
 

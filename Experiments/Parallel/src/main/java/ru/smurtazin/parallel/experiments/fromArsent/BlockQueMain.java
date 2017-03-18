@@ -3,6 +3,8 @@ package ru.smurtazin.parallel.experiments.fromArsent;
 /**
  * Created by a1 on 15.03.17.
  */
+// not realizer for a while
+// TODO realize
 public class BlockQueMain {
 
     void runApp() {

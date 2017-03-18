@@ -5,18 +5,22 @@ package ru.smurtazin.parallel.experiments.TwoThreadsExperiment;
  */
 public class PrintUnoThread implements Runnable {
 
+    int i = 0;
+
     void printFunction() {
         System.out.println("Print 1");
     }
 
     public void run() {
-        try {
-            Thread.sleep(1000);
+        for(; i<5; i++) {
+            try {
+                Thread.sleep(1000);
             /*Thread.wait();
             Thread.not*/
-        } catch (InterruptedException ie) {
-            ie.printStackTrace();
+            } catch (InterruptedException ie) {
+                ie.printStackTrace();
+            }
+            this.printFunction();
         }
-        this.printFunction();
     }
 }

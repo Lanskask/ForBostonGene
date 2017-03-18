@@ -19,9 +19,9 @@ class Writer implements Runnable {
             synchronized (array) {
                 try {
                     //Algorithm?
-                    array.set(i, value);
+                    this.array.set(i, value);
 
-                    array.notifyAll();
+                    this.array.notifyAll();
                     if (i < array.size()-1)
                         array.wait();
                 } catch (InterruptedException ie) {

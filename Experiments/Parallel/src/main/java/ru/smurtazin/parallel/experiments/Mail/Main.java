@@ -5,8 +5,8 @@ package ru.smurtazin.parallel.experiments.Mail;
  */
 public class Main {
     Runnable getTime  = new GetTime20();
-    Runnable getMail = new GetTheEMail(10);
-    Runnable getMailAgain = new GetTheEMail(20);
+    Runnable getMail = new GetTheEMail(3);
+//    Runnable getMailAgain = new GetTheEMail(3);
 
     void runApp() {
         new Thread(this.getTime).start();

@@ -1,4 +1,4 @@
-package ru.smurtazin.forbostonegene.parallel;
+package ru.smurtazin.parallel.experiments.ReadPrintNumWithInterface;
 
 import java.util.ArrayList;
 
@@ -34,14 +34,17 @@ public class PrintingThread implements Runnable {
     }
 
     public void run() {
-        while (this.writeTread.isAlive()) {
+        System.out.println("in printing thread.");
+
+        while (this.writeTread.isAlive()) { // to stop this thread after stoping WriteingThread
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException ie) {
-                Thread.currentThread().interrupt();
+//                Thread.currentThread().interrupt();
+                ie.printStackTrace();
             }
 
-            synchronized (this.numsArray) {
+//            synchronized (this.numsArray) {
                 if (this.numsArray.isEmpty()) {
                     System.out.println("Array is empty.");
                 } else {
@@ -49,7 +52,7 @@ public class PrintingThread implements Runnable {
                     this.numsArray.remove(this.numsArray.indexOf(this.getMinInArray()));
                 }
                 this.numsArray.notifyAll();
-            }
+//            }
         }
     }
 }

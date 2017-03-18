@@ -5,7 +5,23 @@ package ru.smurtazin.parallel.experiments.TwoThreadsExperiment;
  */
 public class PrintDosThread implements Runnable {
 
-    public void run() {
+    int i = 0;
 
+    void printFunction() {
+        System.out.println("Print 2");
     }
+
+    public void run() {
+        for (; i < 5; i++) {
+            try {
+                Thread.sleep(1000);
+            /*Thread.wait();
+            Thread.not*/
+            } catch (InterruptedException ie) {
+                ie.printStackTrace();
+            }
+            this.printFunction();
+        }
+    }
+
 }

@@ -1,4 +1,4 @@
-package ru.smurtazin.forbostonegene.parallel;
+package ru.smurtazin.parallel.experiments.ReadPrintNumWithInterface;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,18 +17,13 @@ public class WritingThread implements Runnable {
         this.numsInInt = numsInInt;
     }
 
-    public ArrayList<Integer> getNumsInInt() {
-        return numsInInt;
-    }
-
     public String takeNum() {
         System.out.println("Write your number: ");
         String nextNum = this.in.nextLine();
 
-//        this.numsInString.add(nextNum); // need to use stringNum array
-        synchronized (this.numsInInt) {
+//        synchronized (this.numsInInt) {
             this.numsInInt.add(this.wordToNum(nextNum));
-        }
+//        }
         return nextNum;
     }
 
@@ -148,7 +143,7 @@ public class WritingThread implements Runnable {
     }
 
     public void run() {
-        synchronized (this.numsInInt) {
+//        synchronized (this.numsInInt) {
             String nextNum = "";
 
             while (!nextNum.equalsIgnoreCase("q")) {
@@ -156,17 +151,18 @@ public class WritingThread implements Runnable {
                 System.out.println("Write your number: ");
                 nextNum = this.in.nextLine();
 
-                synchronized (this.numsInInt) {
+//                synchronized (this.numsInInt) {
                     this.numsInInt.add(this.wordToNum(nextNum));
-                }
+//                }
 
                 try {
                     Thread.sleep(1000); // is it needed or not ?
 //                    this.numsInInt.wait();
                 } catch (InterruptedException ie) {
-                    Thread.currentThread().interrupt();
+//                    Thread.currentThread().interrupt();
+                    ie.printStackTrace();
                 }
-            }
+//            }
         }
     }
 

@@ -31,7 +31,6 @@ public class ReadWriteMain {
         } catch (InterruptedException ie) {
             System.out.println(ie.toString());
         }
-
     }
 
 }
