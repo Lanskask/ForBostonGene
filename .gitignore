@@ -1,6 +1,7 @@
 !*.xml
 *.iml
 .idea
+*.swp
 **/target/
 **/DOCS/
 **/test/
@@ -10,6 +11,6 @@ Experiments/Parallel/
 Experiments/Spring/
 Experiments/Twitter/
 
-SpringMongoDB
+SpringMongoBCrypt/git1/
 
 TwitterApiSender/gs-accessing-twitter-mein/

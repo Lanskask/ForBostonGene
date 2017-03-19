@@ -9,10 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>ParallelNumIO</module>
-        <module>SpringMongoDB</module>
-        <module>TwitterApiSender</module>
         <module>Experiments</module>
+        <module>ParallelNumIO</module>
+        <module>SpringMongoBCrypt</module>
+        <module>WithTwitter4j</module>
     </modules>
 
     <dependencies>

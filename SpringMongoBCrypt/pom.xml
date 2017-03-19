@@ -4,7 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>gs-accessing-mongodb-data-rest</artifactId>
+    <!--<artifactId>gs-accessing-mongodb-data-rest</artifactId>-->
+    <artifactId>SpringMongoBCrypt</artifactId>
     <version>0.1.0</version>
 
     <parent>

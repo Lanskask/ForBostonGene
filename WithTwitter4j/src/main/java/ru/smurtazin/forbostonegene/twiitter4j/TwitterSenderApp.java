@@ -24,7 +24,7 @@ public class TwitterSenderApp {
             answer = sc.nextLine();
             this.getterNickname = answer;
 
-            System.out.println("Print a text you want to send (in brases): ");
+            System.out.println("Print a text you want to send (in quotes): ");
             answer = sc.nextLine();
             this.text = answer;
 //        }
