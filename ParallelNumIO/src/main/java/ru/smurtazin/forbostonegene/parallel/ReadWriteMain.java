@@ -9,11 +9,11 @@ public class ReadWriteMain {
 
     ArrayList<Integer> numsInInt = new ArrayList<Integer>();
 
-    Runnable writingThread = new ReadingThread(numsInInt);
-    Runnable printingThread = new PrintingThread(numsInInt);
+    ReadingThread readingThread = new ReadingThread(numsInInt);
+    PrintingThread printingThread = new PrintingThread(numsInInt, readingThread);
 
     void runApp() throws InterruptedException {
-        Thread wrtThread = new Thread(this.writingThread, "WritingThread");
+        Thread wrtThread = new Thread(this.readingThread, "WritingThread");
         Thread prThr = new Thread(this.printingThread, "PrintingThread");
 
         wrtThread.start();
