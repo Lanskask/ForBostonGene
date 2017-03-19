@@ -6,6 +6,7 @@
 **/DOCS/
 **/test/
 
+!Experiments/Parallel/src/main/java/ru/smurtazin/parallel/experiments/ParArrayExperimants/
 Experiments/
 Experiments/Parallel/
 Experiments/Spring/
