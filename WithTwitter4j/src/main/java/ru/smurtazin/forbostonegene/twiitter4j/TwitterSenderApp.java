@@ -18,8 +18,6 @@ public class TwitterSenderApp {
     String text;
 
     void getAnswers() {
-//        while (! answer.equalsIgnoreCase("q")) {
-//            System.out.println("Print \"q\" to exit. ");
             System.out.println("Print nickname of twitter user: "); // whom you want to send message to
             answer = sc.nextLine();
             this.getterNickname = answer;
@@ -27,7 +25,6 @@ public class TwitterSenderApp {
             System.out.println("Print a text you want to send (in quotes): ");
             answer = sc.nextLine();
             this.text = answer;
-//        }
     }
 
     void sendMessage() {
