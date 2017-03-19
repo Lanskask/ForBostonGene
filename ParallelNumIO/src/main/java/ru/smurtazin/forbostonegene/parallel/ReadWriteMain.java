@@ -10,7 +10,7 @@ public class ReadWriteMain {
     ArrayList<Integer> numsInInt = new ArrayList<Integer>();
 
     ReadingThread readingThread = new ReadingThread(numsInInt);
-    PrintingThread printingThread = new PrintingThread(numsInInt, readingThread);
+    PrintingThread printingThread = new PrintingThread(numsInInt);
 
     void runApp() throws InterruptedException {
         Thread wrtThread = new Thread(this.readingThread, "WritingThread");
