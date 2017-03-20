@@ -14,4 +14,5 @@ Experiments/Twitter/
 
 SpringMongoBCrypt/git1/
 
-WithTwitter4j/docker/
+TwitterSender/docker/
+TwitterSender/tweet.txt
