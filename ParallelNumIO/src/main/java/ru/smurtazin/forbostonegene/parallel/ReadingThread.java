@@ -43,6 +43,7 @@ public class ReadingThread implements Runnable {
     }
 
     /**
+     * one int per one world
      * @param word
      * @return int num
      */
@@ -87,6 +88,8 @@ public class ReadingThread implements Runnable {
     /**
      * Taken from https://stackoverflow.com/questions/4062022/how-to-convert-words-to-a-number
      * Only till thousands
+     * @param inWords - your num as words
+     * @return wordNum -  your num as int
      */
     public int inNumerals(String inWords) {
         int wordNum = 0;
