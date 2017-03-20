@@ -12,7 +12,7 @@
         <module>Experiments</module>
         <module>ParallelNumIO</module>
         <module>SpringMongoBCrypt</module>
-        <module>WithTwitter4j</module>
+        <module>TwitterSender</module>
     </modules>
 
     <dependencies>
