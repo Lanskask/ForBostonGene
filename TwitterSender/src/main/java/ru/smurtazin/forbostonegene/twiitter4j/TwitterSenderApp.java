@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 /**
  * Created by a1 on 16.03.17.
+ * Based on https://github.com/yusuke/twitter4j/blob/master/twitter4j-examples/src/main/java/twitter4j/examples/directmessage/SendDirectMessage.java
  */
 public class TwitterSenderApp {
 
