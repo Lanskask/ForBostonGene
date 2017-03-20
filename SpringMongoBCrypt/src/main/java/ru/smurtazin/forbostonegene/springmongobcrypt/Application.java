@@ -1,5 +1,4 @@
-
-package hello;
+package ru.smurtazin.forbostonegene.springmongobcrypt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

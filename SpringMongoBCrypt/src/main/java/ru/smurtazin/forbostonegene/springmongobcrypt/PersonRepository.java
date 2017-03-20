@@ -1,5 +1,4 @@
-
-package hello;
+package ru.smurtazin.forbostonegene.springmongobcrypt;
 
 import java.util.List;
 

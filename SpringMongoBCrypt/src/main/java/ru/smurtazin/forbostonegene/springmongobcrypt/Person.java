@@ -1,4 +1,4 @@
-package hello;
+package ru.smurtazin.forbostonegene.springmongobcrypt;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.security.crypto.bcrypt.BCrypt;
