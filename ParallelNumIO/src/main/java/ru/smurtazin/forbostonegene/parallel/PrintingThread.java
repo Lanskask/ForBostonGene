@@ -1,6 +1,7 @@
 package ru.smurtazin.forbostonegene.parallel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by a1 on 16.03.17.
@@ -34,11 +35,15 @@ public class PrintingThread implements Runnable {
 
     int getMinInArray() {
         int min = this.numsArray.get(0);
-        for (int item :
-                this.numsArray) {
+        for (int item : this.numsArray) {
             if (item < min) min = item;
         }
         return min;
+    }
+
+    int getMinInArray2() {
+        Collections.sort(this.numsArray);
+        return this.numsArray.get(0);
     }
 
 }
